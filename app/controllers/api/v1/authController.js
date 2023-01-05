@@ -82,7 +82,7 @@ module.exports = {
     }
 
     userService
-      .create({ name, email, password })
+      .create( {name, email, password })
       .then((user) => {
         res.status(201).json({
           status: "REGISTER_SUCCESS",

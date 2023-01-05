@@ -5,9 +5,9 @@ require("dotenv").config();
 const {
   DB_USER = "",
   DB_PASSWORD = "",
-  DB_HOST = "127.0.0.1",
-  DB_NAME = "SecondHand_db",
-  DB_PORT = "5432",
+  DB_HOST = "",
+  DB_NAME = "",
+  DB_PORT = "",
 } = process.env;
 
 module.exports = {
@@ -16,13 +16,14 @@ module.exports = {
     password: DB_PASSWORD,
     database: `${DB_NAME}`,
     host: DB_HOST,
+    port: DB_PORT,
     dialect: "postgres",
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    },
+    // dialectOptions: {
+    //   ssl: {
+    //     require: true,
+    //     rejectUnauthorized: false,
+    //   },
+    // },
   },
   test: {
     username: DB_USER,
@@ -30,12 +31,13 @@ module.exports = {
     database: `${DB_NAME}`,
     host: DB_HOST,
     dialect: "postgres",
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    },
+    port: DB_PORT,
+    // dialectOptions: {
+    //   ssl: {
+    //     require: true,
+    //     rejectUnauthorized: false,
+    //   },
+    // },
   },
   production: {
     username: DB_USER,
@@ -43,11 +45,12 @@ module.exports = {
     database: `${DB_NAME}`,
     host: DB_HOST,
     dialect: "postgres",
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    },
+    port: DB_PORT,
+    // dialectOptions: {
+    //   ssl: {
+    //     require: true,
+    //     rejectUnauthorized: false,
+    //   },
+    // },
   },
 };
